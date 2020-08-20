@@ -125,7 +125,7 @@ export default function ConnectMe() {
                         offset={1000}
                         animateOnce={true}
                     >
-                        <input type="text" placeholder="Your email? " name="email" required />
+                        <input type="email" placeholder="Your email? " name="email" required />
                     </ScrollAnimation>
 
                     <ScrollAnimation animateIn='fadeInDown'
