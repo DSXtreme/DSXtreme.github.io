@@ -1,0 +1,323 @@
+
+/* border animation for div content-border */
+@keyframes button-animation-forward {
+	0%{
+		transform: scale(1);
+		transform:  perspective(0px) rotate3d(0, 0, 0, 0deg);
+	}
+	50%{
+		transform: scale(1.2);
+
+	}
+	100%{
+		transform: scale(1.2);
+		border: 3px solid white;
+		transform:  perspective(80px)  rotate3d(6, 124, -26, 9deg);
+
+	}
+  }
+@keyframes button-animation-reverse {
+	0%{
+		transform: scale(1.2);
+		border: 1px solid white;
+		transform:  perspective(80px)  rotate3d(6, 124, -26, 9deg);
+	}
+	50%{
+		transform: scale(1.2);
+	}
+	100%{
+		transform: scale(1);
+		transform:  perspective(0px) rotate3d(0, 0, 0, 0deg);
+	}
+}
+
+@keyframes logo-anmiation {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+  }
+
+a{
+	color:rgb(211, 211, 211);
+	text-decoration: none;
+	align-self: center;
+}
+
+.logo-container {
+	background: #00000082;
+	width: 100%;
+	height: 950vh;
+	position: relative;
+	left: 0;
+	display: flex;
+	justify-content: center;
+
+}
+
+.logo{
+    width: 26vw;
+    height: 12vw;
+	position: fixed;
+	margin-top: 28vh;
+	z-index: 1000;
+	transition: right .3s cubic-bezier(.25,.46,.45,.94);
+	animation-name: logo-anmiation;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+	animation-fill-mode: forwards;
+}
+
+.logo-container img {
+    width: 100%;
+}
+
+.content {
+	font-family: 'Josefin Sans', sans-serif;
+	color: white;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	margin-top: 24vh;
+	margin-left: 32%;
+	padding: 1em 1em 1em 1em;
+	font-size: 1.9vw;
+	width: 45%;
+	text-align: justify;
+	line-height: 1.2;
+	opacity: 0;
+	transition: opacity .6s;
+	border-radius: 8px;
+}
+
+.content .button {
+	align-self: center;
+	text-align: center;
+	transform: rotate3d(1, 1, 1, 0deg);
+	width: 11vw;
+	height: 2.5vw;
+	margin-left: 12px;
+	left: 16px;
+	padding-top: 4px;
+	font-size: 1.7vw;
+	border-radius: 4px;
+	opacity: 0;
+	border: 1px solid gray;
+	transition: opacity .6s;
+	animation-name: button-animation-reverse;
+	animation-duration: 0.6s;
+	animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+	animation-fill-mode: forwards;
+	box-sizing: border-box;
+}
+
+.content .button:hover {
+	background:  linear-gradient(to right, #34c4fd, #0074aa);
+	animation-name: button-animation-forward;
+	animation-duration: 0.6s;
+	animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+	animation-fill-mode: forwards;
+	z-index: 300;
+
+	overflow: hidden;
+}
+
+
+.content p{
+    opacity: 0;
+	transition: opacity .7s;
+	color: rgb(211, 211, 211);
+	margin: 0px 0px 0px 0px;
+}
+
+.content p h2 {
+	margin: 0px 0px 6px 0px;
+	padding: 0;
+	transition: color 5s;
+}
+
+.button-contaienr{
+	position: relative;
+	width: 100%;
+	margin-top: 12px;
+	display: flex;
+	align-content: center;
+	padding: 1px 1px 1px 1px;
+	justify-content:center;
+
+}
+
+
+/*screen size bellow 767px*/
+@media (max-width: 1000px){
+	.logo-container {
+		background: rgba(0, 0, 0, 0.692);
+		width: 100%;
+		position: relative;
+		top: auto;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		height: 200vh;
+	}
+
+	.logo {
+		width: 350px;
+		height: 350px;
+		position: fixed;
+		margin-top: 33vh;
+		right: auto !important;
+		display: flex;
+		justify-content: center;
+		z-index: 1000;
+		transition:
+			transform .3s cubic-bezier(.25,.46,.45,.94),
+			opacity .4s,
+			visibility .5s;
+
+	}
+
+	.content {
+		font-family: 'Josefin Sans', sans-serif;
+		color: rgb(207, 204, 204);
+		width: 84%;
+		height: 79vh;
+		background: transparent;
+		position: fixed;
+		margin-top: 20vh;
+		margin-left: 0%;
+		border-radius: 8px;
+		font-size: 3.7vw;
+		text-align: left;
+		line-height: 1.2;
+		transform: scale(.6);
+		transition: opacity .9s ,
+			transform 1s;
+	}
+	.content .button{
+		align-self: center;
+		text-align: center;
+		transform: rotate3d(1, 1, 1, 0deg);
+		width: 25vw;
+		height: 5.5vw;
+		margin-top: 18px;
+		padding-top: 9px;
+		font-size: 3vw;
+		border-radius: 4px;
+		opacity: 0;
+		border: 1px solid gray;
+		transition: opacity .6s;
+		animation-name: button-animation-reverse;
+		animation-duration: 0.6s;
+		animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+		animation-fill-mode: forwards;
+	}
+
+	.content .button:active {
+		background:  linear-gradient(to right, #34c4fd, #0074aa);
+		animation-name: button-animation-forward;
+		animation-duration: 0.9s;
+		animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+		animation-fill-mode: forwards;
+	}
+
+	.content p h2 {
+		margin: 5vh 0px 6px 0px;
+		padding: 0;
+		transition: color 6s;
+	}
+
+	.content p{
+		opacity: 0;
+		transition: opacity .3s;
+	}
+
+}
+
+@media (max-width: 767px){
+	.logo-container {
+		background: rgba(0, 0, 0, 0.692);
+		width: 100%;
+		position: relative;
+		top: auto;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		height: 200vh;
+	}
+
+	.logo {
+		width: 56%;
+		height: 55vw;
+		position: fixed;
+		margin-top: 33vh;
+		right: auto !important;
+		display: flex;
+		justify-content: center;
+		z-index: 1000;
+		transition:
+			transform .3s cubic-bezier(.25,.46,.45,.94),
+			opacity .4s,
+			visibility .5s;
+
+	}
+
+	.content {
+		font-family: 'Josefin Sans', sans-serif;
+		color: rgb(207, 204, 204);
+		width: 84%;
+		height: 79vh;
+		background: transparent;
+		position: fixed;
+		margin-top: 2vh;
+		margin-left: 0%;
+		border-radius: 8px;
+		font-size: 6.8vw;
+		text-align: left;
+		line-height: 1.2;
+		overflow-y: auto;
+		transform: scale(.6);
+		transition: opacity .9s ,
+			transform 1s;
+	}
+	.content .button{
+		align-self: center;
+		text-align: center;
+		transform: rotate3d(1, 1, 1, 0deg);
+		width: 30vw;
+		height: 8vw;
+		margin-top: 18px;
+		padding-top: 4px;
+		font-size: 5vw;
+		border-radius: 4px;
+		opacity: 0;
+		border: 1px solid gray;
+		transition: opacity .6s;
+		animation-name: button-animation-reverse;
+		animation-duration: 0.4s;
+		animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+		animation-fill-mode: forwards;
+	}
+
+	.content .button:active {
+		background:  linear-gradient(to right, #34c4fd, #0074aa);
+		animation-name: button-animation-forward;
+		animation-duration: 0.9s;
+		animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+		animation-fill-mode: forwards;
+	}
+
+	.content p h2 {
+		margin: 5vh 0px 6px 0px;
+		padding: 0;
+		transition: color 6s;
+	}
+
+	.content p{
+		opacity: 0;
+		transition: opacity .3s;
+	}
+}

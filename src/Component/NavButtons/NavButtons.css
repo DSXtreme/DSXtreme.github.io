@@ -1,0 +1,44 @@
+.home-button-container{
+    position: fixed;
+    top:1.7vw;
+    width:100%;
+    z-index: 1001;
+}
+
+#home-button {
+	width: 3vw;
+	height: 2vw;
+	min-height: 32px;
+	min-width: 37px;
+	padding-right: 20px;
+    float: right;
+    transition: transform 1s cubic-bezier(.08,.82,.17,1);
+}
+
+#home-button:hover{
+    transform: scale(1.2)
+}
+
+#home-button-p1, #home-button-p2{
+    fill: whitesmoke;
+    transition: fill 1s ease-out;
+}
+
+#home-button:hover #home-button-p1{
+    fill: #51c5ee;
+
+}
+
+#home-button:hover #home-button-p2{
+    fill: #0f74c0
+
+}
+
+@media (max-width: 767px){
+    .home-button-container{
+        position: fixed;
+        top:6.7vw;
+        width:100%;
+
+    }
+}
