@@ -155,34 +155,3 @@ export default function ConnectMe() {
         </div>
     )
 }
-
-// import React,{useState} from 'react'
-// import "./ConnectMe.css"
-
-// export default function ConnectMe() {
-//     const [state, change ] = useState({
-//         count: 4,
-//         theme: "blue"
-//     })
-
-//     let decCoutn = ()=>{
-//         change(prevState => {
-//             return {...prevState, count: prevState.count-1}
-//         })
-//     }
-
-//     let incCoutn = ()=>{
-//         change(prevState => {
-//             return {...prevState ,count: prevState.count+1}
-//         })
-//     }
-
-//     return (
-//         <div>
-//             <button onClick={decCoutn}>-</button>
-//             <span>{state.count}</span>
-//             <span>{state.theme}</span>
-//             <button onClick={incCoutn}>+</button>
-//         </div>
-//     )
-// }
