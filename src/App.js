@@ -3,7 +3,7 @@ import Backdrop from "./Component/Backdrop/Backdrop"
 import Home from "./Component/Home/Home"
 import ShowCase from "./Component/ShowCase/ShowCase"
 import ConenctMe from "./Component/Connect-me/ConnectMe"
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom"
+import { BrowserRouter, Route, Switch  } from "react-router-dom"
 
 
 //importing underscore throttle
