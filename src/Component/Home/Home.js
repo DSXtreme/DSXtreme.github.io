@@ -7,13 +7,8 @@ import "./Home.css"
 
 export default class Home extends Component {
 
-   componentWillMount(){
-      window.scrollTo(0,0)
-   }
-   componentDidMount() {
-      window.scrollTo(0,0)
 
-   }
+
 
    render() {
 
@@ -24,7 +19,7 @@ export default class Home extends Component {
 
 
             <div className="logo" style={{
-               right: this.props.position.right ,
+               right: this.props.position.right,
                transform: this.props.logoProperty.logoTransform,
                display: this.props.logoProperty.logoDisplay,
                opacity: this.props.logoProperty.logoOpacity,
@@ -41,16 +36,18 @@ export default class Home extends Component {
                   transform: "scale(" + this.props.contentStyle.contentScale + ")"
                }}>
 
-               <h2 style={{ color: this.props.contentStyle.contentH2Color }}></h2>
-               <p style={{ opacity: this.props.contentStyle.opacityGreeting }}>
+               <h2>
+                  <p style={{ opacity: this.props.contentStyle.opacityGreeting, color: this.props.contentStyle.contentH2Color  }}>
 
                      <span style={{
                         opacity: this.props.contentStyle.opacityGreeting,
                      }}>
                         HI,
+
 							</span>
 
-               </p>
+                  </p>
+               </h2>
 
                <p style={{
                   opacity: this.props.contentStyle.opacityName,

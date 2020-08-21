@@ -128,15 +128,16 @@ a{
 
 .content p{
     opacity: 0;
-	transition: opacity .7s;
+	transition: opacity .7s, color 5s;;
 	color: rgb(211, 211, 211);
-	margin: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px ;
+
 }
 
-.content p h2 {
+.content h2 {
 	margin: 0px 0px 6px 0px;
 	padding: 0;
-	transition: color 5s;
+
 }
 
 .button-contaienr{

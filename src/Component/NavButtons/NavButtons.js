@@ -7,6 +7,7 @@ class HomeButton extends Component{
 
     render(){
         return (
+
             <div className="home-button-container" onClick={()=>this.props.history.goBack()} >
 
                 <ScrollAnimation animateIn='fadeIn'

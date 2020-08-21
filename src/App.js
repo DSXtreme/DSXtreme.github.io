@@ -3,7 +3,7 @@ import Backdrop from "./Component/Backdrop/Backdrop"
 import Home from "./Component/Home/Home"
 import ShowCase from "./Component/ShowCase/ShowCase"
 import ConenctMe from "./Component/Connect-me/ConnectMe"
-import { BrowserRouter, Route, Switch,  } from "react-router-dom"
+import { HashRouter, Route, Switch,  } from "react-router-dom"
 
 
 //importing underscore throttle
@@ -91,8 +91,12 @@ class App extends Component {
           logoStyle: {
             right: newPosPercent + 32 + "%",
           },
+          buttonStyle: {
+            buttonOpacity: "0",
+          }
         })
       }
+
 
       //changing opacity for content
       if (newPosPercent > 20 && newPosPercent < 37) {
@@ -101,7 +105,8 @@ class App extends Component {
           contentStyle: {
             contentOpacity: newPosPercent + 100 + "%",
             opacityGreeting: newPosPercent + 60 + "%",
-          }
+          },
+
         })
 
       }
@@ -112,7 +117,9 @@ class App extends Component {
             contentOpacity: "100%",
             opacityGreeting: "100%",
             opacityName: newPosPercent + 30 + "%",
-
+          },
+          buttonStyle: {
+            buttonOpacity: "0",
           }
         })
 
@@ -141,7 +148,7 @@ class App extends Component {
             opacityGreeting: "100%",
             opacityName: "100%",
             opacityBody: newPosPercent + 30 + "%",
-            contentH2Color: "#6fcef6"
+            contentH2Color: "#6fcef6 !important"
           },
           buttonStyle: {
             buttonOpacity: "1"
@@ -197,6 +204,9 @@ class App extends Component {
           contentStyle: {
             contentOpacity: "0",
           },
+          buttonStyle: {
+            buttonOpacity: "0",
+          }
         })
 
       }
@@ -257,7 +267,7 @@ class App extends Component {
         })
 
       }
-      else if (newPosPercent < 100 || newPosPercent < 80) {
+      else if (newPosPercent < 100 || newPosPercent < 4) {
         this.setState({
           contentStyle: {
             contentOpacity: "0",
@@ -282,7 +292,7 @@ class App extends Component {
     return (
 
       <div style={{ height: "100%" }}>
-        <BrowserRouter>
+         <HashRouter basename="/">
 
           <Switch>
 
@@ -304,7 +314,7 @@ class App extends Component {
 
           </Switch>
 
-        </BrowserRouter>
+        </HashRouter>
       </div>
     )
   }
