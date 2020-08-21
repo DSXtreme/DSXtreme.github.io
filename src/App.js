@@ -3,7 +3,7 @@ import Backdrop from "./Component/Backdrop/Backdrop"
 import Home from "./Component/Home/Home"
 import ShowCase from "./Component/ShowCase/ShowCase"
 import ConenctMe from "./Component/Connect-me/ConnectMe"
-import { BrowserRouter, Route, Switch  } from "react-router-dom"
+import { BrowserRouter, Route, Switch,  } from "react-router-dom"
 
 
 //importing underscore throttle
@@ -64,10 +64,6 @@ class App extends Component {
 
   }
 
-  componentWillMount(){
-    console.log('First this called');
-  }
-
   //fetching screen size for positioning logo.
   updateHeightHandeler = () => {
     this.ScreenWidth = window.innerWidth
@@ -90,13 +86,13 @@ class App extends Component {
       console.log("executing greater 767")
 
       if (newPosPercent > 4 && newPosPercent < 37) {
+
         this.setState({
           logoStyle: {
             right: newPosPercent + 32 + "%",
           },
         })
       }
-
 
       //changing opacity for content
       if (newPosPercent > 20 && newPosPercent < 37) {

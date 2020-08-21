@@ -41,14 +41,15 @@ export default class Home extends Component {
                   transform: "scale(" + this.props.contentStyle.contentScale + ")"
                }}>
 
+               <h2 style={{ color: this.props.contentStyle.contentH2Color }}></h2>
                <p style={{ opacity: this.props.contentStyle.opacityGreeting }}>
-                  <h2 style={{ color: this.props.contentStyle.contentH2Color }}>
+
                      <span style={{
                         opacity: this.props.contentStyle.opacityGreeting,
                      }}>
                         HI,
 							</span>
-                  </h2>
+
                </p>
 
                <p style={{
