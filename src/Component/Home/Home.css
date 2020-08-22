@@ -49,7 +49,7 @@ a{
 .logo-container {
 	background: #00000082;
 	width: 100%;
-	height: 950vh;
+	height: 550vh;
 	position: relative;
 	left: 0;
 	display: flex;
@@ -65,7 +65,7 @@ a{
 	z-index: 1000;
 	transition: right .3s cubic-bezier(.25,.46,.45,.94);
 	animation-name: logo-anmiation;
-	animation-duration: 1s;
+	animation-duration: 2s;
 	animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
 	animation-fill-mode: forwards;
 }
@@ -125,6 +125,10 @@ a{
 	overflow: hidden;
 }
 
+.content .button:active {
+	background:  linear-gradient(to right, #000000, #000000);
+}
+
 
 .content p{
     opacity: 0;
@@ -176,9 +180,13 @@ a{
 		z-index: 1000;
 		transition:
 			transform .3s cubic-bezier(.25,.46,.45,.94),
-			opacity .4s,
 			visibility .5s;
 
+	}
+
+	.logo-container img {
+		width: 100%;
+		transform: opacity .5s ;
 	}
 
 	.content {
@@ -219,10 +227,7 @@ a{
 
 	.content .button:active {
 		background:  linear-gradient(to right, #34c4fd, #0074aa);
-		animation-name: button-animation-forward;
-		animation-duration: 0.9s;
-		animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
-		animation-fill-mode: forwards;
+		transform:scale(2);
 	}
 
 	.content p h2 {
@@ -261,9 +266,14 @@ a{
 		z-index: 1000;
 		transition:
 			transform .3s cubic-bezier(.25,.46,.45,.94),
-			opacity .4s,
+			opacity 1s,
 			visibility .5s;
 
+	}
+
+	.logo-container img {
+		width: 100%;
+		transform: opacity .5s ;
 	}
 
 	.content {
@@ -305,10 +315,7 @@ a{
 
 	.content .button:active {
 		background:  linear-gradient(to right, #34c4fd, #0074aa);
-		animation-name: button-animation-forward;
-		animation-duration: 0.9s;
-		animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
-		animation-fill-mode: forwards;
+
 	}
 
 	.content p h2 {

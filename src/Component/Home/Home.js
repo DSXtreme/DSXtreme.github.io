@@ -7,7 +7,9 @@ import "./Home.css"
 
 export default class Home extends Component {
 
-
+   componentWillMount(){
+      window.scrollTo(0, 0);
+   }
 
 
    render() {
@@ -25,7 +27,7 @@ export default class Home extends Component {
                opacity: this.props.logoProperty.logoOpacity,
 
             }}>
-               <img src="/asset/logo/website_logo.png" alt="Logo" />
+               <img src="/asset/logo/website_logo.png" alt="Logo" style={{opacity: this.props.logoProperty.logoOpacity,}} />
 
             </div>
 

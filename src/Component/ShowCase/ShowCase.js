@@ -22,7 +22,7 @@ export default class ShowCase extends Component {
          {
             id: Math.random(),
             name: "Quick weather.",
-            work: `A quick way of tracking weaher in one tap, provide hazerdless
+            work: `A quick way of tracking weather in one tap, provide hazerdless
                   information on weather in your locality.`,
             tech: "Flutter, Open Weather API.",
             logo: "asset/tile-logo/quick-weather.png",
@@ -32,8 +32,8 @@ export default class ShowCase extends Component {
          {
             id: Math.random(),
             name: "Home Cloud.",
-            work: `A personal cloud storage, no hazerd of buying a server,
-                  host into your home at your hand.`,
+            work: `A personal cloud storage, no worries of buying a server,
+                  host it at your home at your hand.`,
             tech: "PHP, Apacahi, HTML, CSS.",
             logo: "asset/tile-logo/homeCloud-logo.png",
             date: "June 2019."
@@ -42,7 +42,7 @@ export default class ShowCase extends Component {
          {
             id: Math.random(),
             name: "Agents Performmnace Tracker.",
-            work: `A web app to keep track on performance of Agent's. this web app was buield for
+            work: `A web app to keep track on performance of Agent's. This web app was buield for
                   ease of work for Development officers of Life Insurence Corporation of India.`,
             tech: "PHP, Apacahi, HTML, CSS.",
             logo: "asset/tile-logo/agnet.png",

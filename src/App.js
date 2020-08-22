@@ -3,7 +3,7 @@ import Backdrop from "./Component/Backdrop/Backdrop"
 import Home from "./Component/Home/Home"
 import ShowCase from "./Component/ShowCase/ShowCase"
 import ConenctMe from "./Component/Connect-me/ConnectMe"
-import { HashRouter, Route, Switch,  } from "react-router-dom"
+import { HashRouter, Route, Switch, } from "react-router-dom"
 
 
 //importing underscore throttle
@@ -18,6 +18,7 @@ class App extends Component {
     super(props)
 
     this.ScreenWidth = 0
+    this.initPosPercent = null
   }
 
   state = {
@@ -53,6 +54,7 @@ class App extends Component {
 
   componentDidMount() {
 
+
     //setting up default screen res
     this.ScreenWidth = window.innerWidth
     //screen size change
@@ -72,12 +74,19 @@ class App extends Component {
   //Handeling scroll event
   scrollEvent = () => {
 
-    //calculating percentage of scroll
-    let scrollTop = window.scrollY;
-    let docHeight = document.documentElement.scrollHeight
-    let winHeight = window.innerHeight;
-    let scrollPercent = scrollTop / (docHeight - winHeight);
-    let newPosPercent = Math.round(scrollPercent * 80);
+    let newPosPercent
+    if (window.scrollY === 0) {
+      newPosPercent = this.initPosPercent;
+    }
+    else {
+      //calculating percentage of scroll
+      let scrollTop = window.scrollY;
+      let docHeight = document.documentElement.scrollHeight
+      let winHeight = window.innerHeight;
+      let scrollPercent = scrollTop / (docHeight - winHeight);
+      newPosPercent = Math.round(scrollPercent * 80);
+    }
+
 
     console.log(" form app.js scrolled line 55: " + newPosPercent + "%")
 
@@ -90,6 +99,16 @@ class App extends Component {
         this.setState({
           logoStyle: {
             right: newPosPercent + 32 + "%",
+          },
+          buttonStyle: {
+            buttonOpacity: "0",
+          }
+        })
+      }
+      else if (newPosPercent < 4) {
+        this.setState({
+          logoStyle: {
+            right: "37%",
           },
           buttonStyle: {
             buttonOpacity: "0",
@@ -120,7 +139,10 @@ class App extends Component {
           },
           buttonStyle: {
             buttonOpacity: "0",
-          }
+          },
+          logoStyle: {
+            right: "67%",
+          },
         })
 
       }
@@ -136,7 +158,10 @@ class App extends Component {
           },
           buttonStyle: {
             buttonOpacity: "0"
-          }
+          },
+          logoStyle: {
+            right: "67%",
+          },
         })
 
       }
@@ -152,8 +177,10 @@ class App extends Component {
           },
           buttonStyle: {
             buttonOpacity: "1"
-          }
-
+          },
+          logoStyle: {
+            right: "67%",
+          },
         })
 
       }
@@ -292,7 +319,7 @@ class App extends Component {
     return (
 
       <div style={{ height: "100%" }}>
-         <HashRouter basename="/">
+        <HashRouter basename="/">
 
           <Switch>
 
@@ -309,7 +336,7 @@ class App extends Component {
             } />
 
             <Route path="/connectme" render={() =>
-              <ConenctMe/>
+              <ConenctMe />
             } />
 
           </Switch>

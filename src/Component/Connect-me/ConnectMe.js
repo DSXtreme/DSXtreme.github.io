@@ -88,7 +88,7 @@ export default function ConnectMe() {
 
 
     return (
-        <div className="connect-container">
+        <div className="connect-container" >
             <ScrollAnimation animateIn='fadeInDown'
 
                 duration={2}
