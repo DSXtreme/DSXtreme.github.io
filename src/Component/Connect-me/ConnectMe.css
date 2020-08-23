@@ -13,7 +13,7 @@
 .connect-container{
 	display: flex;
 	flex-direction: column;
-	height:100.01vh;
+	height:100vh;
 }
 .form-container{
     display: flex;

@@ -29,9 +29,9 @@ class App extends Component {
 
     contentStyle: {
       contentOpacity: "",
-      opacityGreeting: "0",
-      opacityName: "0",
-      opacityBody: "0",
+      opacityGreeting: "",
+      opacityName: "",
+      opacityBody: "",
       contentH2Color: "",
       contentScale: "",
     },
@@ -62,7 +62,7 @@ class App extends Component {
 
     //setuping up scrollEvent with throttle of 10
     // window.scrollTo(0, 0); //setting up initail scroll to 0
-    window.addEventListener('scroll', _.throttle(this.scrollEvent, 10))
+    window.addEventListener('scroll', _.throttle(this.scrollEvent, 100))
 
   }
 
@@ -80,15 +80,14 @@ class App extends Component {
     }
     else {
       //calculating percentage of scroll
+
       let scrollTop = window.scrollY;
       let docHeight = document.documentElement.scrollHeight
       let winHeight = window.innerHeight;
       let scrollPercent = scrollTop / (docHeight - winHeight);
       newPosPercent = Math.round(scrollPercent * 80);
+      console.log(newPosPercent)
     }
-
-
-    console.log(" form app.js scrolled line 55: " + newPosPercent + "%")
 
     //changine logo position logo
     if (this.ScreenWidth > 900) {
@@ -104,6 +103,7 @@ class App extends Component {
             buttonOpacity: "0",
           }
         })
+
       }
       else if (newPosPercent < 4) {
         this.setState({
@@ -120,22 +120,23 @@ class App extends Component {
       //changing opacity for content
       if (newPosPercent > 20 && newPosPercent < 37) {
 
+
         this.setState({
           contentStyle: {
-            contentOpacity: newPosPercent + 100 + "%",
-            opacityGreeting: newPosPercent + 60 + "%",
+            contentOpacity: (newPosPercent + 100)/100 ,
+            opacityGreeting: (newPosPercent + 60)/100 ,
           },
 
         })
-
+        console.log(this.state.contentStyle.opacityGreeting)
       }
       else if (newPosPercent > 40 && newPosPercent < 50) {
 
         this.setState({
           contentStyle: {
-            contentOpacity: "100%",
-            opacityGreeting: "100%",
-            opacityName: newPosPercent + 30 + "%",
+            contentOpacity: "1",
+            opacityGreeting: "1",
+            opacityName: (newPosPercent + 30)/100,
           },
           buttonStyle: {
             buttonOpacity: "0",
@@ -153,7 +154,7 @@ class App extends Component {
             contentOpacity: "100%",
             opacityGreeting: "100%",
             opacityName: "100%",
-            opacityBody: newPosPercent + 30 + "%",
+            opacityBody: (newPosPercent + 30)/100,
             contentH2Color: "#6fcef6"
           },
           buttonStyle: {
@@ -169,10 +170,10 @@ class App extends Component {
 
         this.setState({
           contentStyle: {
-            contentOpacity: "100%",
-            opacityGreeting: "100%",
-            opacityName: "100%",
-            opacityBody: newPosPercent + 30 + "%",
+            contentOpacity: "1",
+            opacityGreeting: "1",
+            opacityName: "1",
+            opacityBody: (newPosPercent + 30)/100,
             contentH2Color: "#6fcef6 !important"
           },
           buttonStyle: {
@@ -189,9 +190,9 @@ class App extends Component {
         this.setState({
           contentStyle: {
             contentOpacity: "0",
-            opacityGreeting: "0%",
-            opacityName: "0%",
-            opacityBody: "0%",
+            opacityGreeting: "0",
+            opacityName: "0",
+            opacityBody: "0",
           }
         })
 
