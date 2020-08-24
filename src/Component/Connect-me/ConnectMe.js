@@ -65,6 +65,7 @@ export default function ConnectMe() {
 
             </div>
             break
+        default : break;
     }
 
     let buttonLogo = <svg version="1.1" id="send-logo" xmlns="http://www.w3.org/2000/svg"

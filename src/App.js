@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import Backdrop from "./Component/Backdrop/Backdrop"
+import React, { Component } from 'react'
 import Home from "./Component/Home/Home"
 import ShowCase from "./Component/ShowCase/ShowCase"
 import ConenctMe from "./Component/Connect-me/ConnectMe"
@@ -86,12 +85,12 @@ class App extends Component {
       let winHeight = window.innerHeight;
       let scrollPercent = scrollTop / (docHeight - winHeight);
       newPosPercent = Math.round(scrollPercent * 80);
-      console.log(newPosPercent)
+
     }
 
     //changine logo position logo
     if (this.ScreenWidth > 900) {
-      console.log("executing greater 767")
+
 
       if (newPosPercent > 4 && newPosPercent < 37) {
 
@@ -128,7 +127,7 @@ class App extends Component {
           },
 
         })
-        console.log(this.state.contentStyle.opacityGreeting)
+
       }
       else if (newPosPercent > 40 && newPosPercent < 50) {
 
@@ -311,12 +310,6 @@ class App extends Component {
   }
 
   render() {
-    let backdrop
-
-    if (this.state.menue) {
-      backdrop = <Backdrop toggleMenue={this.toggleMenue} />
-    }
-
     return (
 
       <div style={{ height: "100%" }}>

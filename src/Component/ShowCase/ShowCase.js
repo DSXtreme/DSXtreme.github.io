@@ -22,7 +22,7 @@ export default class ShowCase extends Component {
          {
             id: Math.random(),
             name: "Quick weather.",
-            work: `A quick way of tracking weather in one tap, provide hazerdless
+            work: `A quick way of tracking weather in one tap, provide hazardless
                   information on weather in your locality.`,
             tech: "Flutter, Open Weather API.",
             logo: "asset/tile-logo/quick-weather.png",
@@ -42,8 +42,8 @@ export default class ShowCase extends Component {
          {
             id: Math.random(),
             name: "Agents Performmnace Tracker.",
-            work: `A web app to keep track on performance of Agent's. This web app was buield for
-                  ease of work for Development officers of Life Insurence Corporation of India.`,
+            work: `A web app to keep track on performance of Agent's. This web app was buield to make
+                  easy working for marketing officers of Life Insurence Corporation of India.`,
             tech: "PHP, Apacahi, HTML, CSS.",
             logo: "asset/tile-logo/agnet.png",
             date: "Decembar 2018."
@@ -96,7 +96,7 @@ export default class ShowCase extends Component {
                this.state.projects.map((project) => {
                   return (
 
-                     <div className="tile" key={project.id} onScroll={console.log()}>
+                     <div className="tile" key={project.id}>
 
                         <ScrollAnimation animateIn='flipInX'
                            animateOut='flipOutX'
@@ -203,7 +203,7 @@ export default class ShowCase extends Component {
 
                         <ScrollAnimation animateIn='flipInX'
                            animateOut='flipOutX'
-                           duration={1}
+                           duration={.8}
                            animatePreScroll={true}
                            offset={300}
                         >
@@ -214,17 +214,17 @@ export default class ShowCase extends Component {
 
                         <div className="tile-content">
 
-                           <ScrollAnimation animateIn='slideInLeft'
-                              animateOut='slideOutLeft'
-                              duration={.4}
+                           <ScrollAnimation animateIn='bounceIn'
+                              animateOut='fadeOut'
+                              duration={1}
                               animatePreScroll={false}>
 
                               <h2>{project.name}</h2>
 
                            </ScrollAnimation>
 
-                           <ScrollAnimation animateIn='slideInRight'
-                              animateOut='slideOutRight' duration={.5}
+                           <ScrollAnimation animateIn='bounceIn'
+                              animateOut='fadeOut' duration={1}
                               animatePreScroll={false}>
 
                               <p>{project.work}</p>
@@ -239,9 +239,10 @@ export default class ShowCase extends Component {
 
                            </ScrollAnimation>
 
-                           <ScrollAnimation animateIn='slideInRight'
-                              animateOut='slideOutRight'
+                           <ScrollAnimation animateIn='bounceIn'
+                              animateOut='fadeOut'
                               animatePreScroll={false}
+                              duration={1}
                               offset={900}>
 
                               <span className="dev-date">

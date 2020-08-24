@@ -7,7 +7,7 @@ import "./Home.css"
 
 export default class Home extends Component {
 
-   componentWillMount(){
+   componentDidMount() {
       window.scrollTo(0, 0);
    }
 
@@ -27,7 +27,7 @@ export default class Home extends Component {
                opacity: this.props.logoProperty.logoOpacity,
 
             }}>
-               <img src="/asset/logo/website_logo.png" alt="Logo" style={{opacity: this.props.logoProperty.logoOpacity,}} />
+               <img src="/asset/logo/website_logo.png" alt="Logo" style={{ opacity: this.props.logoProperty.logoOpacity, }} />
 
             </div>
 
@@ -39,7 +39,7 @@ export default class Home extends Component {
                }}>
 
                <h2>
-                  <p style={{ opacity: this.props.contentStyle.opacityGreeting, color: this.props.contentStyle.contentH2Color  }}>
+                  <p style={{ opacity: this.props.contentStyle.opacityGreeting, color: this.props.contentStyle.contentH2Color }}>
 
                      <span style={{
                         opacity: this.props.contentStyle.opacityGreeting,
@@ -59,11 +59,11 @@ export default class Home extends Component {
                </p>
 
                <p style={{ opacity: this.props.contentStyle.opacityBody }}>
-                  An enthusiast programmer, like to bring new ideas alive with the
-                  power of creativity, imagination and handfull of experience
-                  on developing applications and websites. And at
-                  the same time like to reapresent the world with pixles or you
-                  can call it photography as a hobby.
+                  An enthusiastic programmer, like to bring new ideas alive with
+                  the power of creativity, imagination and handful of experience
+                  on developing applications and websites and at the same time
+                  like to represent the world with pixels or you can call it
+                  photography as a hobby.
                </p>
 
                <span className="button-contaienr">

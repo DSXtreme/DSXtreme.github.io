@@ -49,11 +49,12 @@ a{
 .logo-container {
 	background: #00000082;
 	width: 100%;
-	height: 550vh;
+	height: 350vh;
 	position: relative;
 	left: 0;
 	display: flex;
 	justify-content: center;
+	color: white;
 
 }
 
@@ -64,10 +65,7 @@ a{
 	margin-top: 28vh;
 	z-index: 1000;
 	transition: right .3s cubic-bezier(.25,.46,.45,.94);
-	animation-name: logo-anmiation;
-	animation-duration: 2s;
-	animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
-	animation-fill-mode: forwards;
+
 }
 
 .logo-container img {
