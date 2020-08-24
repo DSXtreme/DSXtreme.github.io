@@ -43,7 +43,6 @@ export default function ConnectMe() {
 
     //scuess message dialgue
     let showMsg
-    console.log(submitSuccess)
 
     //showing msg alert sucess/fial to connect
     switch (submitSuccess) {
@@ -57,7 +56,7 @@ export default function ConnectMe() {
             break
 
         case "fail":
-            console.log("fail exe")
+
             showMsg = <div className="alert-fail" style={{ opacity: alertOpacity }}>
                 <div>
                     <strong>Opps filed to send message!!</strong><span>Try resending</span>

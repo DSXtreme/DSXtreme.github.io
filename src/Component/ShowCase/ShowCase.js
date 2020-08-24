@@ -161,7 +161,7 @@ export default class ShowCase extends Component {
       else {
 
          //mobile view
-         console.log(this.props.opacity.opacity)
+
          element = <div className="project-container">
 
             <ScrollAnimation animateIn='fadeInDown'

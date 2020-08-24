@@ -240,7 +240,7 @@ class App extends Component {
       else if (newPosPercent > 30 && newPosPercent < 60) {
 
         i = 3.6 + (newPosPercent / 50)
-        console.log(10 - newPosPercent)
+
         this.setState({
           logo: {
             logoTransform: "scale(" + i + ")",
