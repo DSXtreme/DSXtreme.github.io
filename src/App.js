@@ -256,6 +256,7 @@ class App extends Component {
           contentStyle: {
             contentOpacity: "1",
             contentScale: ".6",
+            contentDisplay:"flex",
           },
           buttonStyle: {
             buttonOpacity: "0",
@@ -274,6 +275,7 @@ class App extends Component {
             opacityName: "1",
             opacityBody: "1",
             contentScale: "1",
+            contentDisplay:"flex",
           },
           logo: {
             logoDisplay: "none",
@@ -296,6 +298,7 @@ class App extends Component {
             opacityName: "0",
             opacityBody: "0",
             contentScale: ".6",
+            contentDisplay:"none",
           },
         })
 
