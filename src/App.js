@@ -27,6 +27,7 @@ class App extends Component {
     },
 
     contentStyle: {
+      contentDisplay:"",
       contentOpacity: "",
       opacityGreeting: "",
       opacityName: "",
@@ -53,14 +54,12 @@ class App extends Component {
 
   componentDidMount() {
 
-
     //setting up default screen res
     this.ScreenWidth = window.innerWidth
     //screen size change
     window.addEventListener("resize", this.updateHeightHandeler)
 
     //setuping up scrollEvent with throttle of 10
-    // window.scrollTo(0, 0); //setting up initail scroll to 0
     window.addEventListener('scroll', _.throttle(this.scrollEvent, 100))
 
   }
@@ -100,7 +99,8 @@ class App extends Component {
           },
           buttonStyle: {
             buttonOpacity: "0",
-          }
+          },
+
         })
 
       }
@@ -111,7 +111,8 @@ class App extends Component {
           },
           buttonStyle: {
             buttonOpacity: "0",
-          }
+          },
+
         })
       }
 
@@ -124,8 +125,8 @@ class App extends Component {
           contentStyle: {
             contentOpacity: (newPosPercent + 100)/100 ,
             opacityGreeting: (newPosPercent + 60)/100 ,
+            contentDisplay:"flex",
           },
-
         })
 
       }
@@ -136,6 +137,7 @@ class App extends Component {
             contentOpacity: "1",
             opacityGreeting: "1",
             opacityName: (newPosPercent + 30)/100,
+            contentDisplay:"flex",
           },
           buttonStyle: {
             buttonOpacity: "0",
@@ -154,7 +156,8 @@ class App extends Component {
             opacityGreeting: "100%",
             opacityName: "100%",
             opacityBody: (newPosPercent + 30)/100,
-            contentH2Color: "#6fcef6"
+            contentH2Color: "#6fcef6",
+            contentDisplay:"flex",
           },
           buttonStyle: {
             buttonOpacity: "0"
@@ -162,6 +165,7 @@ class App extends Component {
           logoStyle: {
             right: "67%",
           },
+
         })
 
       }
@@ -173,7 +177,8 @@ class App extends Component {
             opacityGreeting: "1",
             opacityName: "1",
             opacityBody: (newPosPercent + 30)/100,
-            contentH2Color: "#6fcef6 !important"
+            contentH2Color: "#6fcef6 !important",
+            contentDisplay:"flex",
           },
           buttonStyle: {
             buttonOpacity: "1"
@@ -192,6 +197,7 @@ class App extends Component {
             opacityGreeting: "0",
             opacityName: "0",
             opacityBody: "0",
+            contentDisplay:"none",
           }
         })
 

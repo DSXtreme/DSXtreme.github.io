@@ -31,9 +31,10 @@ export default class Home extends Component {
 
             </div>
 
-
+            {console.log(this.props.contentStyle.contentOpacity,)}
             <div className="content"
                style={{
+                  display: this.props.contentStyle.contentDisplay,
                   opacity: this.props.contentStyle.contentOpacity,
                   transform: "scale(" + this.props.contentStyle.contentScale + ")"
                }}>
