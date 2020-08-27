@@ -1,24 +1,26 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 import "./NavButtons.css"
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Link } from "react-router-dom"
 
-class NavButtons extends Component{
+class NavButtons extends Component {
 
-    render(){
+    render() {
         return (
 
             <div className="home-button-container" >
-                <Link to="/">
-                    <ScrollAnimation animateIn='fadeIn'
-                        animateOut='fadeOutUp'
-                        duration={5}
-                        delay={0}
-                        animatePreScroll={true}
-                        offset={10000}
-                        style={{ width: "100%", position: "fixed", zIndex: "1000", }}
-                        animateOnce={true}
-                    >
+
+                <ScrollAnimation animateIn='fadeIn'
+                    animateOut='fadeOutUp'
+                    duration={5}
+                    delay={0}
+                    animatePreScroll={true}
+                    offset={10000}
+                    style={{ width: "100%", position: "fixed", zIndex: "1000", }}
+                    animateOnce={true}
+                >
+
+                    <Link to="/">
                         <svg
                             version="1.1"
                             id="home-button"
@@ -47,9 +49,9 @@ class NavButtons extends Component{
                                 </g>
                             </g>
                         </svg>
+                    </Link>
+                </ScrollAnimation>
 
-                    </ScrollAnimation>
-                </Link>
             </div>
         )
     }

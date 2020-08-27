@@ -92,7 +92,7 @@ input:focus {
 	border-radius: 4px;
 	background: black;
 	border: 1px solid gray;
-	transition: opacity .6s, color 9s;
+	transition: opacity .6s, background .1s, transform .1s ease;
 	animation-name: button-animation-reverse;
 	animation-duration: 0.6s;
 	animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
@@ -107,10 +107,6 @@ input:focus {
 	animation-fill-mode: forwards;
 }
 
-.form-button:active{
-	background: #8bdeff;
-	transform: scale(3);
-}
 
 #send-logo{
 	width: 25px;
@@ -193,8 +189,26 @@ input:focus {
 	}
 
 	.form-button:active{
-		background: #8bdeff;
-		transform: scale(3);
+		background: #8bdeff !important;
+		transform: scale(1.1) !important;
+	}
+
+	.form-button:hover #send-logo{
+		position:absolute;
+		top: 8px;
+		padding:0;
+		margin:0;
+
+	}
+
+	.form-button:hover  #l-2{
+		fill: rgb(64, 67, 255);
+		transition: fill 2s;
+	}
+
+	.form-button:hover  #l-1{
+		fill: rgb(49, 52, 83);
+		transition: fill 1s ease-in-out;
 	}
 
 	.form-container textarea{
@@ -211,6 +225,12 @@ input:focus {
 		transition: box-shadow .4s cubic-bezier(.79,.73,.46,-0.21);
 		min-width: 20em;
 	}
+
+	.form-button:hover{
+		background: black;
+		animation-name: none;
+	}
+
 	.alert-fail {
 		background: red;
 		width: 80vw;
@@ -263,4 +283,33 @@ input:focus {
 		transition: box-shadow .4s cubic-bezier(.79,.73,.46,-0.21);
 		min-width: 20em;
 	}
+
+	.form-button:hover{
+		background: black;
+		animation-name: none;
+	}
+
+	.form-button:active{
+		background: #8bdeff !important;
+		transform: scale(1.1) !important;
+	}
+
+	.form-button:hover #send-logo{
+		position:absolute;
+		top: 8px;
+		padding:0;
+		margin:0;
+
+	}
+
+	.form-button:hover  #l-2{
+		fill: rgb(64, 67, 255);
+		transition: fill 2s;
+	}
+
+	.form-button:hover  #l-1{
+		fill: rgb(49, 52, 83);
+		transition: fill 1s ease-in-out;
+	}
+
 }

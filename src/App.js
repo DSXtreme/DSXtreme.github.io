@@ -91,14 +91,17 @@ class App extends Component {
     if (this.ScreenWidth > 900) {
 
 
-      if (newPosPercent > 4 && newPosPercent < 37) {
+      if (newPosPercent > 4 && newPosPercent < 31) {
 
         this.setState({
           logoStyle: {
-            right: newPosPercent + 32 + "%",
+            right: newPosPercent  +20+ "%",
           },
           buttonStyle: {
             buttonOpacity: "0",
+          },
+          contentStyle: {
+            contentDisplay:"flex",
           },
 
         })
@@ -107,7 +110,7 @@ class App extends Component {
       else if (newPosPercent < 4) {
         this.setState({
           logoStyle: {
-            right: "37%",
+            right: "18%",
           },
           buttonStyle: {
             buttonOpacity: "0",
@@ -143,7 +146,7 @@ class App extends Component {
             buttonOpacity: "0",
           },
           logoStyle: {
-            right: "67%",
+            right: "48%",
           },
         })
 
@@ -163,7 +166,7 @@ class App extends Component {
             buttonOpacity: "0"
           },
           logoStyle: {
-            right: "67%",
+            right: "48%",
           },
 
         })
@@ -184,7 +187,7 @@ class App extends Component {
             buttonOpacity: "1"
           },
           logoStyle: {
-            right: "67%",
+            right: "48%",
           },
         })
 
