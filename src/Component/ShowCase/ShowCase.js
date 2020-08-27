@@ -44,7 +44,7 @@ export default class ShowCase extends Component {
             name: "Agents Performmnace Tracker.",
             work: `A web app to keep track on performance of Agent's. This web app was buield to make
                   easy working for Marketing Officers of Life Insurence Corporation of India.`,
-            tech: "PHP, Apacahi, HTML, CSS.",
+            tech: "PHP, Apacahe, HTML, CSS.",
             logo: "asset/tile-logo/agnet.png",
             date: "Decembar 2018."
          }
