@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import NavButtons from "../NavButtons/NavButtons"
 import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollHint from "../ScrollHint/ScrollHint"
+import DesignBy from "../DesignBy/DesignBy"
 import "./ShowCase.css"
 
 export default class ShowCase extends Component {
@@ -12,7 +14,7 @@ export default class ShowCase extends Component {
             id: Math.random(),
             name: "Tripper.",
             work: `Tracking of vehicles performance wasn't easier before,
-                  Tripper is an cross platform app to provide all information
+                  Tripper is a cross platform app to provide all information
                   about your vehicle.`,
             tech: "Flutter, Firebase.",
             logo: "asset/tile-logo/Tripper-logo.png",
@@ -22,8 +24,8 @@ export default class ShowCase extends Component {
          {
             id: Math.random(),
             name: "Quick weather.",
-            work: `A quick way of tracking weather in one tap, provide hazardless
-                  information on weather in your locality.`,
+            work: `A quick way of tracking weather on one tap, providing a basic
+                  information of the weather in your locality.`,
             tech: "Flutter, Open Weather API.",
             logo: "asset/tile-logo/quick-weather.png",
             date: "Decembar 2019."
@@ -34,16 +36,18 @@ export default class ShowCase extends Component {
             name: "Home Cloud.",
             work: `A personal cloud storage, no worries of buying a server,
                   host it at your home at your hand.`,
-            tech: "PHP, Apacahi, HTML, CSS.",
+            tech: "PHP, Apacahe, HTML, CSS.",
             logo: "asset/tile-logo/homeCloud-logo.png",
             date: "June 2019."
          },
 
          {
             id: Math.random(),
-            name: "Agents Performmnace Tracker.",
-            work: `A web app to keep track on performance of Agent's. This web app was buield to make
-                  easy working for Marketing Officers of Life Insurence Corporation of India.`,
+            name: "Agents Performance Tracker.",
+            work: `A web app to keep a track on the performance of the agent's
+                  working under the Marketing Officers. This web app was built
+                  to make the working easier for the Marketing Officers of the
+                  Life Insurance Corporation of India.`,
             tech: "PHP, Apacahe, HTML, CSS.",
             logo: "asset/tile-logo/agnet.png",
             date: "Decembar 2018."
@@ -63,6 +67,7 @@ export default class ShowCase extends Component {
 
          element = <div className="project-container">
 
+            {/* headers */}
             <ScrollAnimation animateIn='fadeInDown'
 
                duration={2}
@@ -92,6 +97,7 @@ export default class ShowCase extends Component {
 
             </ScrollAnimation>
 
+            {/* project'elements */}
             {
                this.state.projects.map((project) => {
                   return (
@@ -156,6 +162,7 @@ export default class ShowCase extends Component {
                   )
                })
             }
+            <ScrollHint/>
          </div>
       }
       else {
@@ -164,6 +171,7 @@ export default class ShowCase extends Component {
 
          element = <div className="project-container">
 
+            {/* headers */}
             <ScrollAnimation animateIn='fadeInDown'
                 animateOut='fadeOutUp'
                duration={2}
@@ -194,7 +202,7 @@ export default class ShowCase extends Component {
 
             </ScrollAnimation>
 
-
+            {/* project'elements */}
             {
                this.state.projects.map((project) => {
                   return (
@@ -262,6 +270,7 @@ export default class ShowCase extends Component {
                   )
                })
             }
+            <ScrollHint/>
          </div>
       }
 
@@ -270,8 +279,8 @@ export default class ShowCase extends Component {
          <main>
             <NavButtons/>
             {element}
+            <DesignBy/>
          </main>
       )
    }
 }
-//copyright, dsx logo size fix

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ScrollAnimation from 'react-animate-on-scroll';
+import Loading from "../Loading/LoadingConnectMe"
+import DesignBy from "../DesignBy/DesignBy"
 import emailjs from "emailjs-com"
 import NavButtons from "../NavButtons/NavButtons"
 import "./ConnectMe.css"
@@ -8,23 +10,28 @@ import "./ConnectMe.css"
 export default function ConnectMe() {
 
     //chekcing if the msg was success/not
-
     const [submitSuccess, changeState] = useState("fail")
     const [alertOpacity, changeOpacity] = useState(0)
-    //sending email via emailjs
+
+    //Setting up busy screen after sending messgae untill sucessful
+    const [loadingState, updateLoadingState] = useState(false)
+
+    //sending email via emailjs and setining busy screen ture/false
     let sendEmail = (e) => {
         e.preventDefault()
-
+        updateLoadingState(true)
         emailjs.sendForm('gmail', 'template_zTUSF5NX', e.target, 'user_fri38UVJnT3wRsEQBBLD2')
             .then((result) => {
                 //changing state to sucess
                 changeState("sucess")
                 changeOpacity(1)
+                updateLoadingState(false)
                 console.log(result.text)
             }, (error) => {
                 //changing state to fail
                 changeState("fail")
                 changeOpacity(1)
+                updateLoadingState(false)
                 console.log(error.text);
             })
         e.target.reset()
@@ -41,10 +48,18 @@ export default function ConnectMe() {
         window.scrollTo(0, 0)
     })
 
-    //scuess message dialgue
-    let showMsg
+    //Display Loading
+    let LoadingElement
+    console.log(loadingState)
+    if(loadingState === true){
+        LoadingElement = <Loading/>
+    }
+    else{
+        LoadingElement = null
+    }
 
     //showing msg alert sucess/fial to connect
+    let showMsg
     switch (submitSuccess) {
         case "sucess":
             console.log("sucess exe")
@@ -67,6 +82,7 @@ export default function ConnectMe() {
         default : break;
     }
 
+    //burron logo component
     let buttonLogo = <svg version="1.1" id="send-logo" xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 512.001 512.001" style={{ enableBackground: 'new 0 0 512.001 512.001' }}
@@ -85,8 +101,6 @@ export default function ConnectMe() {
         </g>
     </svg>
 
-
-
     return (
         <div className="connect-container" >
             <ScrollAnimation animateIn='fadeInDown'
@@ -99,7 +113,7 @@ export default function ConnectMe() {
             >
 
                 <div className="heading-fixed">
-                    <h1>Connect me </h1>
+                    <h1>Connect Me </h1>
                 </div>
 
             </ScrollAnimation>
@@ -151,7 +165,9 @@ export default function ConnectMe() {
                     </ScrollAnimation>
                 </form>
                 {showMsg}
+                {LoadingElement}
             </div>
+            <DesignBy/>
         </div>
     )
 }

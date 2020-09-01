@@ -4,6 +4,7 @@ html{
   z-index: -1;
   top: 0;
   left: 0
+
 }
 
 body {
@@ -16,6 +17,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::scrollbar-track {
+  background: orange;        /* color of the tracking area */
 }
 
 input:focus, textarea:focus, select:focus{

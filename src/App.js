@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./App.css"
 import Home from "./Component/Home/Home"
 import ShowCase from "./Component/ShowCase/ShowCase"
 import ConenctMe from "./Component/Connect-me/ConnectMe"
@@ -27,7 +28,7 @@ class App extends Component {
     },
 
     contentStyle: {
-      contentDisplay:"",
+      contentDisplay: "",
       contentOpacity: "",
       opacityGreeting: "",
       opacityName: "",
@@ -48,22 +49,34 @@ class App extends Component {
 
     fixstyle: {
       opacity: 0
-    }
+    },
+
+    orientation: ""
 
   }
 
-  componentDidMount() {
+  componentWillMount = () => {
 
     //setting up default screen res
     this.ScreenWidth = window.innerWidth
+
     //screen size change
     window.addEventListener("resize", this.updateHeightHandeler)
 
     //setuping up scrollEvent with throttle of 10
     window.addEventListener('scroll', _.throttle(this.scrollEvent, 100))
 
+    window.addEventListener("orientationchange", this.updateOrentation)
+
   }
 
+  //updating orientation val in orientation change
+  updateOrentation = () => {
+
+    this.setState({
+       orientation: window.orientation
+    })
+  }
   //fetching screen size for positioning logo.
   updateHeightHandeler = () => {
     this.ScreenWidth = window.innerWidth
@@ -95,13 +108,13 @@ class App extends Component {
 
         this.setState({
           logoStyle: {
-            right: newPosPercent  +20+ "%",
+            right: newPosPercent + 20 + "%",
           },
           buttonStyle: {
             buttonOpacity: "0",
           },
           contentStyle: {
-            contentDisplay:"flex",
+            contentDisplay: "flex",
           },
 
         })
@@ -126,9 +139,9 @@ class App extends Component {
 
         this.setState({
           contentStyle: {
-            contentOpacity: (newPosPercent + 100)/100 ,
-            opacityGreeting: (newPosPercent + 60)/100 ,
-            contentDisplay:"flex",
+            contentOpacity: (newPosPercent + 100) / 100,
+            opacityGreeting: (newPosPercent + 60) / 100,
+            contentDisplay: "flex",
           },
         })
 
@@ -139,8 +152,8 @@ class App extends Component {
           contentStyle: {
             contentOpacity: "1",
             opacityGreeting: "1",
-            opacityName: (newPosPercent + 30)/100,
-            contentDisplay:"flex",
+            opacityName: (newPosPercent + 30) / 100,
+            contentDisplay: "flex",
           },
           buttonStyle: {
             buttonOpacity: "0",
@@ -158,9 +171,9 @@ class App extends Component {
             contentOpacity: "100%",
             opacityGreeting: "100%",
             opacityName: "100%",
-            opacityBody: (newPosPercent + 30)/100,
+            opacityBody: (newPosPercent + 30) / 100,
             contentH2Color: "#6fcef6",
-            contentDisplay:"flex",
+            contentDisplay: "flex",
           },
           buttonStyle: {
             buttonOpacity: "0"
@@ -179,9 +192,9 @@ class App extends Component {
             contentOpacity: "1",
             opacityGreeting: "1",
             opacityName: "1",
-            opacityBody: (newPosPercent + 30)/100,
+            opacityBody: (newPosPercent + 30) / 100,
             contentH2Color: "#6fcef6 !important",
-            contentDisplay:"flex",
+            contentDisplay: "flex",
           },
           buttonStyle: {
             buttonOpacity: "1"
@@ -200,7 +213,7 @@ class App extends Component {
             opacityGreeting: "0",
             opacityName: "0",
             opacityBody: "0",
-            contentDisplay:"none",
+            contentDisplay: "none",
           }
         })
 
@@ -231,11 +244,12 @@ class App extends Component {
 
       if (newPosPercent > 10 && newPosPercent < 30) {
 
-        i = 2.5 + (newPosPercent / 50)
+        i = 1 + (newPosPercent / 10)
+
         this.setState({
           logo: {
             logoTransform: "scale(" + i + ")",
-            logoOpacity: 120 - newPosPercent + "%",
+            logoOpacity: 500 - newPosPercent + "%",
           },
           contentStyle: {
             contentOpacity: "0",
@@ -248,18 +262,18 @@ class App extends Component {
       }
       else if (newPosPercent > 30 && newPosPercent < 60) {
 
-        i = 3.6 + (newPosPercent / 50)
+        i = 2 + (newPosPercent / 5)
 
         this.setState({
           logo: {
             logoTransform: "scale(" + i + ")",
-            logoOpacity: 50 - newPosPercent + "%",
+            logoOpacity: newPosPercent + "%",
 
           },
           contentStyle: {
-            contentOpacity: "1",
-            contentScale: ".6",
-            contentDisplay:"flex",
+            contentOpacity: ".6",
+            contentScale: i / 50,
+            contentDisplay: "flex",
           },
           buttonStyle: {
             buttonOpacity: "0",
@@ -269,7 +283,7 @@ class App extends Component {
       }
       else if (newPosPercent > 60 && newPosPercent < 100) {
 
-        i = 4 + (newPosPercent / 50)
+
 
         this.setState({
           contentStyle: {
@@ -277,10 +291,11 @@ class App extends Component {
             opacityGreeting: "1",
             opacityName: "1",
             opacityBody: "1",
-            contentScale: "1",
-            contentDisplay:"flex",
+            contentScale: ".99",
+            contentDisplay: "flex",
           },
           logo: {
+
             logoDisplay: "none",
           },
           buttonStyle: {
@@ -301,7 +316,7 @@ class App extends Component {
             opacityName: "0",
             opacityBody: "0",
             contentScale: ".6",
-            contentDisplay:"none",
+            contentDisplay: "none",
           },
         })
 
@@ -322,34 +337,86 @@ class App extends Component {
   }
 
   render() {
-    return (
 
-      <div style={{ height: "100%" }}>
-        <HashRouter basename="/">
+    let content
 
-          <Switch>
+    //checking for orientation in under 900px
+    if (this.ScreenWidth > 900) {
+      console.log("screen orientation exec > 900")
+      return(
+        <div style={{ height: "100%" }}>
+          <HashRouter basename="/">
 
-            <Route exact path="/" render={() =>
-              <Home
-                position={this.state.logoStyle}
-                contentStyle={this.state.contentStyle}
-                logoProperty={this.state.logo}
-                btnOpacity={this.state.buttonStyle} />
-            } />
+            <Switch>
 
-            <Route path="/showcase" render={() =>
-              <ShowCase opacity={this.state.fixstyle} />
-            } />
+              <Route exact path="/" render={() =>
+                <Home
+                  position={this.state.logoStyle}
+                  contentStyle={this.state.contentStyle}
+                  logoProperty={this.state.logo}
+                  btnOpacity={this.state.buttonStyle} />
+              } />
 
-            <Route path="/connectme" render={() =>
-              <ConenctMe />
-            } />
+              <Route path="/showcase" render={() =>
+                <ShowCase opacity={this.state.fixstyle} />
+              } />
 
-          </Switch>
+              <Route path="/connectme" render={() =>
+                <ConenctMe />
+              } />
 
-        </HashRouter>
-      </div>
-    )
+            </Switch>
+
+          </HashRouter>
+        </div>
+      )
+
+    }
+    else {
+      //this.state.orientation === 90
+      if (this.state.orientation === 90 || this.state.orientation === -90) {
+
+        return (
+          <div style={{ height: "100%" }}>
+            <div id="landscape-view">
+              <h2>Landscap mode is not supported yet...</h2>
+              <h3>Turn your device to potrait</h3>
+            </div>
+          </div>
+        )
+      }
+      else {
+
+        return(
+          <div style={{ height: "100%" }}>
+            <HashRouter basename="/">
+
+              <Switch>
+
+                <Route exact path="/" render={() =>
+                  <Home
+                    position={this.state.logoStyle}
+                    contentStyle={this.state.contentStyle}
+                    logoProperty={this.state.logo}
+                    btnOpacity={this.state.buttonStyle} />
+                } />
+
+                <Route path="/showcase" render={() =>
+                  <ShowCase opacity={this.state.fixstyle} />
+                } />
+
+                <Route path="/connectme" render={() =>
+                  <ConenctMe />
+                } />
+
+              </Switch>
+
+            </HashRouter>
+          </div>
+        )
+      }
+
+    }
   }
 
 }

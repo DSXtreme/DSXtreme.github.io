@@ -98,8 +98,9 @@ a{
 	align-self: center;
 	text-align: center;
 	transform: rotate3d(1, 1, 1, 0deg);
-	width: 11vw;
+	width: 15vw;
 	height: 2.5vw;
+	margin-top: 10px;
 	margin-left: 12px;
 	left: 16px;
 	padding-top: 4px;
@@ -257,7 +258,7 @@ a{
 		left: 0;
 		display: flex;
 		justify-content: center;
-		height: 200vh;
+		height: 150vh;
 	}
 
 	.logo {
@@ -269,13 +270,17 @@ a{
 		display: flex;
 		justify-content: center;
 		z-index: 1000;
-		transition: transform .3s cubic-bezier(.25,.46,.45,.94), opacity 1s, visibility .5s;
+		transition: transform .7s , opacity .6s, visibility .5s;
 		animation-name: none;
 	}
 
 	.logo-main {
 		width: 100%;
 		transform: opacity .5s ;
+	}
+
+	.logo svg{
+		transition: opacity 1s;
 	}
 
 	.content {
@@ -294,13 +299,13 @@ a{
 		overflow-y: auto;
 		transform: scale(.6);
 		transition: opacity .9s ,
-			transform 1s;
+			transform .6s;
 	}
 	.content .button{
 		align-self: center;
 		text-align: center;
 		transform: rotate3d(1, 1, 1, 0deg);
-		width: 30vw;
+		width: 40vw;
 		height: 8vw;
 		margin-top: 18px;
 		padding-top: 4px;

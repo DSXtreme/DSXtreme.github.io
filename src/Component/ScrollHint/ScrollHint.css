@@ -1,0 +1,72 @@
+@keyframes animation-arrow {
+    0% {
+        opacity: 0;
+        top: 1vh;
+        display:flex;
+    }
+    20% {
+        opacity: .5;
+        top: 2vh;
+        display:flex;
+    }
+    40%{
+        opacity: 1;
+        top:0vh;
+        display:flex;
+    }
+    60%{
+        top:2vh;
+        display:flex;
+    }
+    80%{
+        opacity: .5;
+        top:0vh;
+        display:flex;
+    }
+    100%{
+        top:2vh;
+        opacity: 0;
+        display: none;
+    }
+}
+
+.scroll-hint{
+
+    position: fixed;
+    width: 100vw;
+    height: 7vw;
+    top: 85vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.scroll-hint-container{
+    position: absolute;
+    bottom: 12px;
+    width: 2vw;
+}
+
+.arrow-down{
+    position: relative;
+    margin-bottom: 3vh;
+    opacity: 0;
+    fill: rgb(255, 255, 255);
+    animation: animation-arrow 3s 1s forwards ease-in-out;
+}
+
+
+@media (max-width: 900px){
+    .scroll-hint-container{
+        width: 3vw;
+    }
+    .scroll-hint{
+        top: 90vh;
+    }
+}
+@media (max-width: 767px){
+    .scroll-hint-container{
+        width: 6vw;
+    }
+}
