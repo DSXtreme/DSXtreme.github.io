@@ -1,21 +1,30 @@
 .design-by {
-	font-family: 'Josefin Sans', sans-serif;
+
 	height: 3rem;
     width: 100%;
     display:flex;
     justify-content: right;
-    color: rgb(66, 66, 66);
+    color: rgb(104, 103, 103);
     position: fixed;
     padding-top:12px;
-	top: 94vh;
+    top: 90vh;
+    user-select: none;
 }
 
 .design-by span{
+    font-family: 'Josefin Sans', sans-serif;
     margin-right: 10px;
     font-size: 1.2rem;
-
 }
 
 #sp-name{
     margin-right: 30px;
+}
+
+@media (max-width: 1000px){
+    .design-by span{
+        font-family: 'Josefin Sans', sans-serif;
+        margin-right: 10px;
+        font-size: 1rem;
+    }
 }
