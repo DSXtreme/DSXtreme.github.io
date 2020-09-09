@@ -76,7 +76,7 @@ export default class Home extends Component {
                   </Link>
                   <Link to="/connectme" >
                      <div className="button" style={{ opacity: this.props.btnOpacity.buttonOpacity }}>
-                        Connecte me
+                        Connect me
                      </div>
                   </Link>
 
