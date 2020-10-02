@@ -20,7 +20,7 @@ export default function ConnectMe() {
     let sendEmail = (e) => {
         e.preventDefault()
         updateLoadingState(true)
-        emailjs.sendForm('gmail', 'template_zTUSF5NX', e.target, 'user_fri38UVJnT3wRsEQBBLD2')
+        emailjs.sendForm('gmail', 'template_WYbXmBhx', e.target, 'user_gGf6iGNrSAcRbGLPiDn3F')
             .then((result) => {
                 //changing state to sucess
                 changeState("sucess")
