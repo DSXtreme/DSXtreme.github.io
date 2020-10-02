@@ -150,7 +150,7 @@ export default function ConnectMe() {
                         animateOnce={true}
                     >
 
-                        <textarea name="message" placeholder="Your message..." cols="10" rows="10"></textarea>
+                        <textarea  placeholder="Your message..." cols="10" name="message_html" rows="10" required/>
 
                     </ScrollAnimation>
 
